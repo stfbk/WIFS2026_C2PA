@@ -1,11 +1,15 @@
+<div align="center">
+
 # Enhanced image forensics through partial C2PA-based provenance information
 
 <!-- badges -->
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](ADD link to arxiv paper) -->
-<!-- [![IEEE Paper](https://img.shields.io/badge/IEEE-Paper-blue)](link2paper) -->
+
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white&labelColor=3776AB)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&logoColor=white&labelColor=EE4C2C)](https://pytorch.org/)
 <!-- end badges -->
+
+</div>
 
 This the official implementation of our paper:
 
@@ -13,14 +17,7 @@ This the official implementation of our paper:
 > *Riccardo Ziglio, Eleonora Marchesini, Andrea Montibeller, Giulia Boato, Silvio Ranise, Cecilia Pasquini*  
 > Accepted to IEEE Workshop on Information Forensics and Security 2026
 
----
-
-## Abstract
-
-Cryptographically verifiable C2PA-based Content Credentials (CCs) can be attached to freshly acquired or generated digital images but also to already existing ones with no previous provenance information, for instance after processing through trusted C2PA-enabled software tools. The latter case leads to images with so-called partial CCs, which capture only the last operations applied, while prior provenance remains unknown
-and can be investigated through signal forensics. This paper addresses the forensic analysis of such images, highlighting the opportunity to leverage the partial CCs as additional trusted knowledge to adapt forensic detectors towards the statistical characteristics of the image under analysis and mitigate potential distribution shifts. To this end, a two-step strategy is envisioned:(i) reconstructing the operations applied by the last signer through a structural analysis of the partial CCs; (ii) exploiting the obtained reconstruction to enhance the forensic detector of the analyst through an adaptation process. An empirical analysis on partial CCs produced by commercial C2PA-enabled software tools through different editing operations is carried out, providing evidence on the feasibility of the reconstruction in practical cases. An experimental case study on the forensic task of synthetic image detection is then presented, showing that the proposed strategy can significantly enhance the performance of state-of-the-art detectors on test images that are postprocessed via C2PA-enabled software tools after being generated/acquired.
-
----
+Available on [arXiv](link2paper)
 
 ## Hybrid authenticity verification pipeline
 
@@ -30,7 +27,11 @@ This repository implements the two-step detection strategy presented in the pape
 
 - **Reconstruction-aware detector adaptation**: Forensic detectors are optimized accordingly through supervised adaptation techniques  (SDA)
 
-![pipeline-image](assets/pipeline.drawio.png)
+<!-- ![pipeline-image](assets/pipeline.drawio.png) -->
+
+![pipeline-image](./assets/pipeline_large.png)
+
+Full resolution pipeline available in [./assets/pipeline.png](./assets/pipeline.png)
 
 ---
 

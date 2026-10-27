@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the C2PA-based analysis that led to the definition of: *Full Consistency (FC)*, *Partial Consistency (PC)*, *Full Uniqueness (FU)*, and *Partial Uniqueness (PU)*, as discussed in Sect. IV of the paper *"Enhanced image forensics through partial C2PA-based provenance information"*.
+This repository contains the C2PA-based analysis that led to the definition of: *Full Consistency (FC)*, *Partial Consistency (PC)*, *Full Uniqueness (FU)*, and *Partial Uniqueness (PU)*, as discussed in Sect. III of the paper *"Enhanced image forensics through partial C2PA-based provenance information"*.
 
 The analysis consists of two main steps:
 

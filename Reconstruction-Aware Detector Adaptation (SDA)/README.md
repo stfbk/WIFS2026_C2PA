@@ -41,9 +41,9 @@ Fine-tuning and model paths are automatically resolved via the YAML configs in `
 
 ---
 
-## Repository Structure
+## Folder Organization
 
-```text
+```bash
 ├── launcher.py                   # Main entry point for training, testing, and single-image inference
 ├── configs/                      # Detector YAML experiment configurations
 ├── splits/                       # Benchmark split definitions (e.g., tf2k_splits.json, tf2k_SOCIAL_splits.json)

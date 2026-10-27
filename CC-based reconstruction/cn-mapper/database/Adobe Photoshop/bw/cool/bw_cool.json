@@ -1,0 +1,12 @@
+{
+  "bw_cool": [
+    {
+      "action": "c2pa.edited",
+      "parameters": {
+        "description": "Made other changes",
+        "com.adobe.tool": "applied_preset_black_&_white_-_cool",
+        "com.adobe.icon": "https://cai-assertions.adobe.com/icons/edit-in-light-dark.svg"
+      }
+    }
+  ]
+}

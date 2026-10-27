@@ -1,0 +1,116 @@
+{
+  "style_bw_BW08": [
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "25",
+        "com.adobe.acr": "ColorGradeBlending"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-25",
+        "com.adobe.acr": "ColorGradeShadowLum"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "0",
+        "com.adobe.acr": "ConvertToGrayscale"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "Exposure2012",
+        "com.adobe.acr.value": "68"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-15",
+        "com.adobe.acr": "GrayMixerBlue"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-20",
+        "com.adobe.acr": "GrayMixerGreen"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "GrayMixerMagenta",
+        "com.adobe.acr.value": "-15"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "GrayMixerOrange",
+        "com.adobe.acr.value": "-10"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-25",
+        "com.adobe.acr": "GrayMixerPurple"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "Point Curve Changed",
+        "com.adobe.acr": "Point Curve"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-20",
+        "com.adobe.acr": "PostCropVignetteAmount"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "PostCropVignetteFeather",
+        "com.adobe.acr.value": "50"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-50",
+        "com.adobe.acr": "PostCropVignetteMidpoint"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "SplitToningShadowHue",
+        "com.adobe.acr.value": "35"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "SplitToningShadowSaturation",
+        "com.adobe.acr.value": "5"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "20",
+        "com.adobe.acr": "Texture"
+      }
+    }
+  ]
+}

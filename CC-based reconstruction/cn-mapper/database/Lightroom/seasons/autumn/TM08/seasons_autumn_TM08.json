@@ -1,0 +1,179 @@
+{
+  "seasons_autumn_TM08": [
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-20",
+        "com.adobe.acr": "Clarity2012"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "ColorGradeBlending",
+        "com.adobe.acr.value": "6"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "ColorGradeMidtoneHue",
+        "com.adobe.acr.value": "22"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "ColorGradeMidtoneSat",
+        "com.adobe.acr.value": "22"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "25",
+        "com.adobe.acr": "ColorGradeShadowLum"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "6",
+        "com.adobe.acr": "Dehaze"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "68",
+        "com.adobe.acr": "Exposure2012"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "HueAdjustmentOrange",
+        "com.adobe.acr.value": "-10"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "30",
+        "com.adobe.acr": "HueAdjustmentYellow"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "10",
+        "com.adobe.acr": "LuminanceAdjustmentOrange"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-30",
+        "com.adobe.acr": "LuminanceAdjustmentRed"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "ParametricDarks",
+        "com.adobe.acr.value": "-10"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "ParametricHighlights",
+        "com.adobe.acr.value": "30"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "ParametricLights",
+        "com.adobe.acr.value": "20"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "ParametricShadows",
+        "com.adobe.acr.value": "10"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "-32",
+        "com.adobe.acr": "PostCropVignetteAmount"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "Saturation",
+        "com.adobe.acr.value": "10"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "20",
+        "com.adobe.acr": "SaturationAdjustmentOrange"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "SaturationAdjustmentRed",
+        "com.adobe.acr.value": "-20"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "20",
+        "com.adobe.acr": "SaturationAdjustmentYellow"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "SplitToningHighlightHue",
+        "com.adobe.acr.value": "75"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "SplitToningShadowHue",
+        "com.adobe.acr.value": "43"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "SplitToningShadowSaturation",
+        "com.adobe.acr.value": "41"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "Texture",
+        "com.adobe.acr.value": "30"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "Vibrance",
+        "com.adobe.acr.value": "10"
+      }
+    }
+  ]
+}

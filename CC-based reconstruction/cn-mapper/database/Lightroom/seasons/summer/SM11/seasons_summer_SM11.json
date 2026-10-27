@@ -1,0 +1,88 @@
+{
+  "seasons_summer_SM11": [
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "10",
+        "com.adobe.acr": "Blacks2012"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "10",
+        "com.adobe.acr": "Clarity2012"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "6",
+        "com.adobe.acr": "Dehaze"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "Exposure2012",
+        "com.adobe.acr.value": "68"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "PostCropVignetteAmount",
+        "com.adobe.acr.value": "9"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "45",
+        "com.adobe.acr": "PostCropVignetteFeather"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "PostCropVignetteMidpoint",
+        "com.adobe.acr.value": "-50"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "PostCropVignetteRoundness",
+        "com.adobe.acr.value": "94"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "6",
+        "com.adobe.acr": "Saturation"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "SaturationAdjustmentOrange",
+        "com.adobe.acr.value": "10"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "6",
+        "com.adobe.acr": "Vibrance"
+      }
+    },
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr": "Whites2012",
+        "com.adobe.acr.value": "16"
+      }
+    }
+  ]
+}

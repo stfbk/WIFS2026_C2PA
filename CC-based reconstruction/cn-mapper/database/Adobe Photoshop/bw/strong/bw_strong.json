@@ -1,0 +1,12 @@
+{
+  "bw_strong": [
+    {
+      "action": "c2pa.edited",
+      "parameters": {
+        "description": "Made other changes",
+        "com.adobe.icon": "https://cai-assertions.adobe.com/icons/edit-in-light-dark.svg",
+        "com.adobe.tool": "applied_preset_black_&_white_-_strong"
+      }
+    }
+  ]
+}

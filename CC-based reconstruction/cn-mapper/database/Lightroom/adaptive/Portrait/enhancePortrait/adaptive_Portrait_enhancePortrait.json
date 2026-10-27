@@ -1,0 +1,18 @@
+{
+  "adaptive_Portrait_enhancePortrait": [
+    {
+      "action": "c2pa.color_adjustments",
+      "parameters": {
+        "com.adobe.acr.value": "Masking changed",
+        "com.adobe.acr": "Masking"
+      }
+    },
+    {
+      "action": "c2pa.drawing",
+      "parameters": {
+        "com.adobe.acr": "Masking",
+        "com.adobe.acr.value": "Masking changed"
+      }
+    }
+  ]
+}

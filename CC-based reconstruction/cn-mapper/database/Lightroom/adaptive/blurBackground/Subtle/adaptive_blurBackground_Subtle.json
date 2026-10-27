@@ -1,0 +1,11 @@
+{
+  "adaptive_blurBackground_Subtle": [
+    {
+      "action": "c2pa.edited",
+      "parameters": {
+        "com.adobe.acr.value": "Lens Blur changed",
+        "com.adobe.acr": "Lens Blur"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "landscape_colorpop": [
+    {
+      "action": "c2pa.edited",
+      "parameters": {
+        "description": "Made other changes",
+        "com.adobe.tool": "applied_preset_landscape_-_color_pop",
+        "com.adobe.icon": "https://cai-assertions.adobe.com/icons/edit-in-light-dark.svg"
+      }
+    }
+  ]
+}

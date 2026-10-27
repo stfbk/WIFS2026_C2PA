@@ -1,0 +1,12 @@
+{
+  "portraits_warmth": [
+    {
+      "action": "c2pa.edited",
+      "parameters": {
+        "description": "Made other changes",
+        "com.adobe.tool": "applied_preset_portraits_-_warmth",
+        "com.adobe.icon": "https://cai-assertions.adobe.com/icons/edit-in-light-dark.svg"
+      }
+    }
+  ]
+}

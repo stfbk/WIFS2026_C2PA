@@ -1,0 +1,680 @@
+{
+  "blurbgstrong": {
+    "autumn-road.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    }
+  },
+  "blurbgsubtle": {
+    "autumn-road.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.edited": {
+        "Lens Blur": "Lens Blur changed"
+      }
+    }
+  },
+  "enhanceportrait": {
+    "autumn-road.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    }
+  },
+  "landscape_autumn01": {
+    "autumn-road.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    }
+  },
+  "landscape_spring01": {
+    "autumn-road.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    }
+  },
+  "landscape_summer01": {
+    "autumn-road.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    }
+  },
+  "landscape_winter01": {
+    "autumn-road.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    }
+  },
+  "sky_bluedrama": {
+    "autumn-road.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    }
+  },
+  "subjectpop": {
+    "autumn-road.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "beach.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "field.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "firefly-geko.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "fox.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "galaxy.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "grass.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "mountain.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "pink-trees.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    },
+    "rome.jpg": {
+      "c2pa.color_adjustments": {
+        "Masking": "Masking changed"
+      },
+      "c2pa.drawing": {
+        "Masking": "Masking changed"
+      }
+    }
+  }
+}

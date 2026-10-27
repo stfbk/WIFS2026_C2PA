@@ -1,0 +1,30 @@
+input_presets/
+baseSamples/
+test/
+preset.py
+outputs/
+c2pa_report/
+# testBatch/
+# results/test_vari
+# results/test_preset_match
+check_imgs/
+.env/
+c2pa_compare.py
+# create_folders.py
+images/
+utils/image_comparison/onlineVsOfflineLR
+c2pa_prescan/_pycache_
+preset_comparator/_pycache_
+oldREADME_notes.md
+truefake_2k/dataset
+truefake_2k/tf_renamed
+truefake_2k/rand_imgs
+*/__pycache__
+# results/_preset_actions_/_test_
+# results/preset_analysis/_test__adaptive/
+results/
+results_backup/
+truefake_2k/tf2k_lr_org/
+*.zip
+.venv
+*::Zone.Identifier

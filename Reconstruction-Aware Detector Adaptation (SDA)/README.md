@@ -85,6 +85,7 @@ python launcher.py \
   --detector <CLIP-D|R50_ND|R50_E2P> \
   --phases <train|test|both> \
   --dataset <dataset_relative_path> \
+  [ --social <facebook|telegram|twitter> ] \
   [--ft] \
   [--unfreezeL4R50] \
   [--weights-name lora_r4_qv]
@@ -96,6 +97,12 @@ python launcher.py \
 
   ```bash
   python launcher.py --detector R50_ND --phases both --dataset adaptive/blurbg_strong --ft --unfreezeL4R50
+  ```
+  
+- **Fine-tune ResNet-50 (`R50_E2P`) on the telegram subset**:
+
+ ```bash
+  python launcher.py --detector R50_E2P --phases both --dataset adaptive/blurbg_strong --social telegram --ft --unfreezeL4R50 
   ```
 
 - **Fine-tune CLIP-D with LoRA**:

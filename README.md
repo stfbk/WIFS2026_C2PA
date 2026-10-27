@@ -31,7 +31,7 @@ This repository implements the two-step detection strategy presented in the pape
 
 ![pipeline-image](./assets/pipeline_large.png)
 
-Full resolution pipeline available in [./assets/pipeline.png](./assets/pipeline.png)
+Full resolution pipeline available in [here](./assets/pipeline.png)
 
 ---
 

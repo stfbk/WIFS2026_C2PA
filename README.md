@@ -1,6 +1,6 @@
-<div align="center">
-
 # Enhanced image forensics through partial C2PA-based provenance information
+
+<div align="center">
 
 <!-- badges -->
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](ADD link to arxiv paper) -->

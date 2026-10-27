@@ -3,7 +3,7 @@
 <div align="center">
 
 <!-- badges -->
-<!-- [![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](ADD link to arxiv paper) -->
+<!-- [![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](link2paper) -->
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white&labelColor=3776AB)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&logoColor=white&labelColor=EE4C2C)](https://pytorch.org/)
@@ -19,6 +19,8 @@ This the official implementation of our paper:
 
 Available on [arXiv](link2paper)
 
+---
+
 ## Hybrid authenticity verification pipeline
 
 This repository implements the two-step detection strategy presented in the paper:
@@ -29,9 +31,9 @@ This repository implements the two-step detection strategy presented in the pape
 
 <!-- ![pipeline-image](assets/pipeline.drawio.png) -->
 
-![pipeline-image](./assets/pipeline_large.png)
+![pipeline-image](./assets/simplifiedPipeline.png)
 
-Full resolution pipeline available in [here](./assets/pipeline.png)
+Full resolution pipeline available in [./assets/](./assets/)
 
 ---
 

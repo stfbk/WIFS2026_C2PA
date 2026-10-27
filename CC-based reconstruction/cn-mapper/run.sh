@@ -4,7 +4,7 @@ set -euo pipefail
 # Directory this script lives in
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-PACKAGE="c2pa_wifs"   # the package directory name (contains __main__.py, info.py, pipeline.py, ...)
+PACKAGE="c2pa_mapper"   # the package directory name (contains __main__.py, info.py, pipeline.py, ...)
 
 echo "Checking for system requirements..."
 

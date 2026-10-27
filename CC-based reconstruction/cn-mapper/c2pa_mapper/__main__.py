@@ -14,17 +14,17 @@ import argparse
 import sys
 from pathlib import Path
 
-from c2pa_wifs.models import Category, ClassificationRecord
-from c2pa_wifs.orchestrator import analyse_image
-from c2pa_wifs.info import __c2pa_scan_logo__, __description_c2pa__
-from c2pa_wifs.tool_id import identify_tool
-from c2pa_wifs.cn_mapper import cn_mapper
+from c2pa_mapper.models import Category, ClassificationRecord
+from c2pa_mapper.orchestrator import analyse_image
+from c2pa_mapper.info import __c2pa_mapper_logo__, __description_c2pa__
+from c2pa_mapper.tool_id import identify_tool
+from c2pa_mapper.cn_mapper import cn_mapper
 
 DEFAULT_DATABASE_DIR = "./database"
 DEFAULT_IMAGE_PATH = "./input/X_Fake_StyleGAN3_conf-t-psi-0p5_00482.png"
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(prog="c2pa_wifs")
+    parser = argparse.ArgumentParser(prog="c2pa_mapper")
     parser.add_argument(
         "image",
         nargs="?",
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     if not args.database.exists():
         sys.exit(f"ERROR: Path not found {args.database}")
 
-    print(__c2pa_scan_logo__)
+    print(__c2pa_mapper_logo__)
     print(__description_c2pa__)
     print()
 

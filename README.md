@@ -1,4 +1,4 @@
-# WIFS2026_C2PA
+# Enhanced image forensics through partial C2PA-based provenance information
 
 <!-- ARXIV --> 
 <!-- https://github.com/zsxoff/arxiv-badge -->
@@ -7,7 +7,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white&labelColor=3776AB)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&logoColor=white&labelColor=EE4C2C)](https://pytorch.org/)
-
 
 Official implementation of our paper:
 

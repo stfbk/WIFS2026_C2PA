@@ -49,7 +49,7 @@ Full resolution pipeline available in [./assets/](./assets/)
 └── README.md                                  # Primary repository overview, setup guide, and documentation 
 ```
 
-*Note: More implementation details are contained in the README.md file within each component's subfolder.*
+**Note: Implementation details and requirements are contained in the README.md file within each component's subfolder.**
 
 ---
 
@@ -61,7 +61,7 @@ Full resolution pipeline available in [./assets/](./assets/)
 
 ---
 
-## Requirements
+<!-- ## Requirements
 
 ### Python
 
@@ -89,14 +89,15 @@ Add that line to your `~/.bashrc` or `~/.zshrc` to make it permanent.
 Download the latest release for your platform from:
 <https://github.com/contentauth/c2patool/releases>
 
----
+--- -->
 
 ## Citation
 
-TODO: add citation
+If your research uses our dataset, models and code, partially or in full, please cite:
 
-<!-- If your research uses our dataset, models and code, partially or in full, please cite:
+**TODO: add citation**
 
+<!-- 
 ```bash
 @INPROCEEDINGS{11113429,
   author={Ziglio, Riccardo and Pasquini, Cecilia and Ranise, Silvio},

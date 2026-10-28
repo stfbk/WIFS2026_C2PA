@@ -93,11 +93,10 @@ Download the latest release for your platform from:
 
 ## Citation
 
-If your research uses our dataset, models and code, partially or in full, please cite:
+<!--  If your research uses our dataset, models and code, partially or in full, please cite:
 
 **TODO: add citation**
 
-<!-- 
 ```bash
 @INPROCEEDINGS{11113429,
   author={Ziglio, Riccardo and Pasquini, Cecilia and Ranise, Silvio},

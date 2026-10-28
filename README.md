@@ -55,9 +55,9 @@ Full resolution pipeline available in [./assets/](./assets/)
 
 ## Models and Dataset Downloads
 
-- **Pre-trained Checkpoints**: Download from [SharePoint Release Link](https://fbk-my.sharepoint.com/my?id=%2Fpersonal%2Frziglio%5Ffbk%5Feu%2FDocuments%2FSharedMaterial%2FReplicationPackages%2FWIFS2026%5FReplicationPackage%2FWIFS2026%5FFTmodels&ga=1&share=cgqiQOCr3hxKSIPfO6eEDcXTEgUCI%2D10cYG3HBP9NMapILfHOw)
+- **Pre-trained Checkpoints**: Download from [SharePoint Model Weights Link](https://fbk-my.sharepoint.com/my?id=%2Fpersonal%2Frziglio%5Ffbk%5Feu%2FDocuments%2FSharedMaterial%2FReplicationPackages%2FWIFS2026%5FReplicationPackage%2FWIFS2026%5FFTmodels&ga=1&share=cgqiQOCr3hxKSIPfO6eEDcXTEgUCI%2D10cYG3HBP9NMapILfHOw)
 
-- **Dataset**: Download the experimental dataset from [SharePoint Data Link](https://fbk-my.sharepoint.com/my?id=%252Fpersonal%252Frziglio_fbk_eu%252FDocuments%252FSharedMaterial%252FReplicationPackages%252FWIFS2026_ReplicationPackage%252FWIFS2026_C2PAdataset&ga=1)
+- **Dataset**: Download the experimental dataset from [SharePoint Dataset Link](https://fbk-my.sharepoint.com/my?id=%2Fpersonal%2Frziglio%5Ffbk%5Feu%2FDocuments%2FSharedMaterial%2FReplicationPackages%2FWIFS2026%5FReplicationPackage%2FWIFS2026%5FC2PAdataset&viewid=004d79fb%2D3960%2D4679%2D8671%2Dcba74b2553b9&ga=1&share=cgopuiOTiMY3Q4kiRhrejUUMEgUCj8s4m1gXIjXasHgvJAIAkg)
 
 ---
 

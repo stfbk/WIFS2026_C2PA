@@ -37,7 +37,7 @@ run_consistency() {
 run_uniqueness_and_clustering() {
     echo ""
     echo "Checking if clustering is needed..."
-    python3 -m c2pa_clustering "$OUTPUT_PATH_cons"
+    python3 -m c2pa_clustering.cluster "$OUTPUT_PATH_cons"
     echo ""
     echo "Running uniqueness analysis..."
     python3 -m c2pa_uniqueness "$INPUT_PATH_uniq" "$OUTPUT_PATH_uniq"

@@ -3,7 +3,7 @@
 <div align="center">
 
 <!-- badges -->
-[![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)]([link2paper](https://arxiv.org/abs/2610.38639))
+[![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](https://arxiv.org/abs/2610.38639)
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white&labelColor=3776AB)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&logoColor=white&labelColor=EE4C2C)](https://pytorch.org/)
@@ -17,7 +17,7 @@ This the official implementation of our paper:
 > *Riccardo Ziglio, Eleonora Marchesini, Andrea Montibeller, Giulia Boato, Silvio Ranise, Cecilia Pasquini*  
 > Accepted to IEEE Workshop on Information Forensics and Security 2026
 
-Available on [arXiv](https://arxiv.org/abs/2610.38639)
+Available on [arXiv](https://arxiv.org/abs/2610.38639).
 
 ---
 

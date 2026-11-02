@@ -3,7 +3,7 @@
 <div align="center">
 
 <!-- badges -->
-<!-- [![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](link2paper) -->
+[![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)]([link2paper](https://arxiv.org/abs/2610.38639))
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white&labelColor=3776AB)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&logoColor=white&labelColor=EE4C2C)](https://pytorch.org/)
@@ -17,7 +17,7 @@ This the official implementation of our paper:
 > *Riccardo Ziglio, Eleonora Marchesini, Andrea Montibeller, Giulia Boato, Silvio Ranise, Cecilia Pasquini*  
 > Accepted to IEEE Workshop on Information Forensics and Security 2026
 
-Available on [arXiv](link2paper)
+Available on [arXiv](https://arxiv.org/abs/2610.38639)
 
 ---
 
@@ -54,6 +54,8 @@ Full resolution pipeline available in [./assets/](./assets/)
 ---
 
 ## Models and Dataset Downloads
+
+TODO: add comment to links and folder organization
 
 - **Pre-trained Checkpoints**: Download from [SharePoint Model Weights Link](https://fbk-my.sharepoint.com/my?id=%2Fpersonal%2Frziglio%5Ffbk%5Feu%2FDocuments%2FSharedMaterial%2FReplicationPackages%2FWIFS2026%5FReplicationPackage%2FWIFS2026%5FFTmodels&ga=1&share=cgqiQOCr3hxKSIPfO6eEDcXTEgUCI%2D10cYG3HBP9NMapILfHOw)
 
@@ -93,22 +95,18 @@ Download the latest release for your platform from:
 
 ## Citation
 
-<!--  If your research uses our dataset, models and code, partially or in full, please cite:
-
-**TODO: add citation**
+ If your research uses our dataset, models and code, partially or in full, please cite:
 
 ```bash
-@INPROCEEDINGS{11113429,
-  author={Ziglio, Riccardo and Pasquini, Cecilia and Ranise, Silvio},
-  booktitle={2025 13th International Workshop on Biometrics and Forensics (IWBF)}, 
-  title={Spotting Tell-Tale Visual Artifacts in Face Swapping Videos: Strengths and Pitfalls of CNN Detectors}, 
-  year={2025},
-  volume={},
-  number={},
-  pages={01-06},
-  keywords={Biometrics;Visualization;Forensics;Soft sensors;Conferences;Detectors;Real-time systems;Data models;Faces;Videos;face swapping;face verification;remote video calls;forensic detection},
-  doi={10.1109/IWBF63717.2025.11113429}
+@misc{EnhancedImageForensicsC2PA__WIFS2026,
+      title={Enhanced image forensics through partial C2PA-based provenance information}, 
+      author={Riccardo Ziglio and Eleonora Marchesini and Andrea Montibeller and Giulia Boato and Silvio Ranise and Cecilia Pasquini},
+      year={2026},
+      eprint={2610.38639},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2610.38639}, 
 }
-``` -->
+```
 
 <!-- add licence? -->

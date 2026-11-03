@@ -1,6 +1,6 @@
 {
   "experiment": {
-    "detector":     "R50_TF",
+    "detector":     "R50_E2P",
     "weights_name": "pretrained",
     "config_dir":   "configs",
     "results_root": "/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/",
@@ -16,8 +16,8 @@
     "device":      "cuda:0",
     "num_threads": 4,
     "checkpoints": [
-      {"architecture": "R50_TF", "preset": "adaptive_blurbg_strong", "ft": true, "r50unfreezeL4": true},
-      {"architecture": "R50_TF", "preset": "adaptive_blurbg_subtle",  "ft": true, "r50unfreezeL4": true}
+      {"architecture": "R50_E2P", "preset": "adaptive_blurbg_strong", "ft": true, "r50unfreezeL4": true},
+      {"architecture": "R50_E2P", "preset": "adaptive_blurbg_subtle",  "ft": true, "r50unfreezeL4": true}
     ]
   },
 
@@ -30,8 +30,8 @@
     "device":      "cuda:0",
     "num_threads": 4,
     "checkpoints": [
-      {"architecture": "R50_TF", "preset": "adaptive_blurbg_strong", "ft": true, "r50unfreezeL4": true},
-      {"architecture": "R50_TF", "preset": "adaptive_blurbg_subtle", "ft": true, "r50unfreezeL4": true}
+      {"architecture": "R50_E2P", "preset": "adaptive_blurbg_strong", "ft": true, "r50unfreezeL4": true},
+      {"architecture": "R50_E2P", "preset": "adaptive_blurbg_subtle", "ft": true, "r50unfreezeL4": true}
     ]
   }
 }

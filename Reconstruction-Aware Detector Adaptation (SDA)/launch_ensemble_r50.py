@@ -8,7 +8,7 @@ Config file format:
 
     {
       "experiment": {
-        "detector":      "R50_nodown",    // detector name → loads configs/<detector>.yaml
+        "detector":      "R50-ND",    // detector name → loads configs/<detector>.yaml
         "weights_name":  "pretrained",    // used in checkpoint paths and report output dir
         "config_dir":    "configs",       // path to YAML configs dir (default: configs)
         "results_root":  "/path/to/results",  // base dir for test.py output (optional,
@@ -24,9 +24,9 @@ Config file format:
         "num_threads":  4,
         "batch_size":   32,
         "checkpoints":  [
-          {"architecture": "R50_nodown", "preset": "adaptive_blurbg_strong",
+          {"architecture": "R50-ND", "preset": "adaptive_blurbg_strong",
            "ft": true, "r50unfreezeL4": true},
-          {"architecture": "R50_nodown", "preset": "blurbg_subtle",
+          {"architecture": "R50-ND", "preset": "blurbg_subtle",
            "ft": true, "r50unfreezeL4": true}
         ]
       }
@@ -52,17 +52,17 @@ def load_yaml(path):
 
 # Map architecture names to their detector subdirectory.
 DETECTOR_DIRS = {
-    'R50_nodown': 'R50_nodown',
-    'R50_TF':     'R50_TF',
-    # 'CLIP-D':     'CLIP-D'
+    'R50-ND': 'R50-ND',
+    'R50-E2P': 'R50-E2P',
+    # 'CLIP-D': 'CLIP-D'
 }
 
 # test.py output_dir tag per architecture — mirrors each detector's test.py
 # construction so launch_ensemble.py can find the image_results.json it wrote.
 DETECTOR_RESULT_TAG = {
-    'R50_nodown': 'R50_nodown',
-    'R50_TF':     'R50_TF',
-    # 'CLIP-D':     'CLIP-D'
+    'R50-ND': 'R50-ND',
+    'R50-E2P': 'R50-E2P',
+    # 'CLIP-D': 'CLIP-D'
 }
 
 

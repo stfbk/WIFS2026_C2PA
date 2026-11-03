@@ -69,7 +69,7 @@ def train(train_dataloader, val_dataloader, model, optimizer, dataset, settings)
     
     log_path = save_dir + '/train.log'
     log = create_logger(log_path)
-    log.info(f"Training the R50_tf model on the {dataset} dataset - FT: {settings.freeze} - unfreezeL4: {settings.r50unfreezeL4}")
+    log.info(f"Training the R50_E2P model on the {dataset} dataset - FT: {settings.freeze} - unfreezeL4: {settings.r50unfreezeL4}")
     log.info(f"Training settings: {json.dumps(vars(settings), indent=2, default=str)}")
 
     early_stopping = None

@@ -1,6 +1,6 @@
 {
   "experiment": {
-    "detector":     "R50_nodown",
+    "detector":     "R50_ND",
     "weights_name": "pretrained",
     "config_dir":   "configs",
     "results_root": "/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/",
@@ -16,9 +16,9 @@
     "device":      "cuda:0",
     "num_threads": 4,
     "checkpoints": [
-      {"architecture": "R50_nodown", "preset": "adaptive_sky_bluedrama",    "ft": true, "r50unfreezeL4": true},
-      {"architecture": "R50_nodown", "preset": "adaptive_enhance_portrait", "ft": true, "r50unfreezeL4": true},
-      {"architecture": "R50_nodown", "preset": "adaptive_subject_pop",      "ft": true, "r50unfreezeL4": true}
+      {"architecture": "R50_ND", "preset": "adaptive_sky_bluedrama",    "ft": true, "r50unfreezeL4": true},
+      {"architecture": "R50_ND", "preset": "adaptive_enhance_portrait", "ft": true, "r50unfreezeL4": true},
+      {"architecture": "R50_ND", "preset": "adaptive_subject_pop",      "ft": true, "r50unfreezeL4": true}
     ]
   }
 }

@@ -194,23 +194,23 @@ if __name__ == '__main__':
     if settings.ensemble:
         print("ensemble!")
         if settings.social:
-            output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}_{settings.social}/{dataset_dir_name}/R50_nodown_{tag}/{settings.data_keys}'
-            logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}_{settings.social}/{dataset_dir_name}/R50_nodown_{tag}/', 'test.log'))
+            output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}_{settings.social}/{dataset_dir_name}/R50_ND_{tag}/{settings.data_keys}'
+            logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}_{settings.social}/{dataset_dir_name}/R50_ND_{tag}/', 'test.log'))
         else:
-            output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}/{dataset_dir_name}/R50_nodown_{tag}/{settings.data_keys}'
-            logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}/{dataset_dir_name}/R50_nodown_{tag}/', 'test.log'))
+            output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}/{dataset_dir_name}/R50_ND_{tag}/{settings.data_keys}'
+            logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}/{dataset_dir_name}/R50_ND_{tag}/', 'test.log'))
         
     
     elif any(sub in str(settings.data_root) for sub in ['Facebook', 'Telegram', 'Twitter']):
-        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_nodown/{settings.name}_social/{dataset_dir_name}/R50_nodown_{tag}/{settings.data_keys}'
-        logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_nodown/{settings.name}_social/{dataset_dir_name}/R50_nodown_{tag}/', 'test.log'))
+        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_ND/{settings.name}_social/{dataset_dir_name}/R50_ND_{tag}/{settings.data_keys}'
+        logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_ND/{settings.name}_social/{dataset_dir_name}/R50_ND_{tag}/', 'test.log'))
 
     elif settings.social:
-        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_nodown/{settings.name}_{settings.social}/{dataset_dir_name}/R50_nodown_{tag}/{settings.data_keys}' # change path to be outside detector folder
-        logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_nodown/{settings.name}_{settings.social}/{dataset_dir_name}/R50_nodown_{tag}/', 'test.log'))
+        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_ND/{settings.name}_{settings.social}/{dataset_dir_name}/R50_ND_{tag}/{settings.data_keys}' # change path to be outside detector folder
+        logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_ND/{settings.name}_{settings.social}/{dataset_dir_name}/R50_ND_{tag}/', 'test.log'))
     else:
-        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_nodown/{settings.name}/{dataset_dir_name}/R50_nodown_{tag}/{settings.data_keys}' # change path to be outside detector folder
-        logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_nodown/{settings.name}/{dataset_dir_name}/R50_nodown_{tag}/', 'test.log'))
+        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_ND/{settings.name}/{dataset_dir_name}/R50_ND_{tag}/{settings.data_keys}' # change path to be outside detector folder
+        logger = create_logger(os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_ND/{settings.name}/{dataset_dir_name}/R50_ND_{tag}/', 'test.log'))
     os.makedirs(output_dir, exist_ok=True)
 
     model = create_architecture(settings.arch, pretrained=True, num_classes=1).to(device)

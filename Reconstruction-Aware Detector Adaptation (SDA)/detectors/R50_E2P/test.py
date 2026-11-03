@@ -189,23 +189,23 @@ if __name__ == "__main__":
     
     if settings.ensemble:
         if settings.social:
-            output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}_{settings.social}/{dataset_name}/R50_TF_{tag}/{settings.data_keys}'
-            logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}_{settings.social}/{dataset_name}/R50_TF_{tag}/', 'test.log')
+            output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}_{settings.social}/{dataset_name}/R50_E2P_{tag}/{settings.data_keys}'
+            logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}_{settings.social}/{dataset_name}/R50_E2P_{tag}/', 'test.log')
         else:
-            output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}/{dataset_name}/R50_TF_{tag}/{settings.data_keys}'
-            logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}/{dataset_name}/R50_TF_{tag}/', 'test.log')
+            output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}/{dataset_name}/R50_E2P_{tag}/{settings.data_keys}'
+            logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/ensemble/{settings.name}/{dataset_name}/R50_E2P_{tag}/', 'test.log')
     
     elif any(sub in str(settings.data_root) for sub in ['Facebook', 'Telegram', 'Twitter']):
-        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_TF/{settings.name}/social/{dataset_name}/R50_TF_{tag}/{settings.data_keys}'
-        logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_TF/{settings.name}_social/{dataset_name}/R50_TF_{tag}/', 'test.log')
+        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_E2P/{settings.name}/social/{dataset_name}/R50_E2P_{tag}/{settings.data_keys}'
+        logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_E2P/{settings.name}_social/{dataset_name}/R50_E2P_{tag}/', 'test.log')
 
     elif settings.social:
-        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_TF/{settings.name}_{settings.social}/{dataset_name}/R50_TF_{tag}/{settings.data_keys}' # change path to be outside detector folder
-        logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_TF/{settings.name}_{settings.social}/{dataset_name}/R50_TF_{tag}/', 'test_log.txt')
+        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_E2P/{settings.name}_{settings.social}/{dataset_name}/R50_E2P_{tag}/{settings.data_keys}' # change path to be outside detector folder
+        logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_E2P/{settings.name}_{settings.social}/{dataset_name}/R50_E2P_{tag}/', 'test_log.txt')
 
     else:
-        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_TF/{settings.name}/{dataset_name}/R50_TF_{tag}/{settings.data_keys}' # change path to be outside detector folder
-        logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_TF/{settings.name}/{dataset_name}/R50_TF_{tag}/', 'test_log.txt')
+        output_dir = f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_E2P/{settings.name}/{dataset_name}/R50_E2P_{tag}/{settings.data_keys}' # change path to be outside detector folder
+        logger_path = os.path.join(f'/second-disk/Image-Deepfake-Detectors-Public-Library/results/R50_E2P/{settings.name}/{dataset_name}/R50_E2P_{tag}/', 'test_log.txt')
 
     print(f"output_dir: {output_dir}")
     os.makedirs(output_dir, exist_ok=True)

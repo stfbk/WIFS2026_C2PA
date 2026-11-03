@@ -16,10 +16,9 @@ AI-generated synthetic media are increasingly used in real-world scenarios, ofte
 
 The R50-TF network uses a ResNet50 architecture pretrained on ImageNet, modified to exclude downsampling at the first layer. During training, the network's backbone remains frozen, and only the classification head is trained. This classification head implements "learned prototypes" to provide robust real vs. fake image detection and to detect out-of-distribution samples by modeling an isotropic Gaussian class-conditional distribution representative of the input data.
 
-
 # Please Cite
 
-```
+```bash
 @misc{dellanna2025truefake,
       title={TrueFake: A Real World Case Dataset of 
       Last Generation Fake Images also Shared on 

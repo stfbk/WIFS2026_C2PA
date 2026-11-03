@@ -31,7 +31,7 @@ For each image, its manifest is parsed using `c2patool` (via `helper.manifest.re
 The software name is normalized (`tool_id.identify_tool`) and checked for support (**Adobe Lightroom** or **Adobe Photoshop**).
 
 - If no evaluable active manifest is present or the tool is unsupported, execution halts early and returns the corresponding result category.
-- For supported tools, `cn_mapper.py` locates the matching subdirectory in `database/` and recursively loads all JSON preset files. A unique preset identifier is derived from its relative path (appended with entry keys if a single JSON file contains multiple presets).
+- For supported tools, `cn_mapper.py` locates the matching subdirectory in the selected database directory and recursively loads all JSON preset files. A unique preset identifier is derived from its relative path (appended with entry keys if a single JSON file contains multiple presets).
 
 #### 3. Matching & Scoring
 
@@ -55,8 +55,10 @@ The CLI outputs a human-readable result. The underlying `ClassificationRecord` c
 Run the pipeline from the repository root by passing an image path:
 
 ```bash
-./run.sh <path_to_image> [--database ./database]
+bash run.sh <path_to_image> [--database <path_to_database>]
 ```
+
+The `--database` option is optional and defaults to `./database`. This directory should contain the results of the consistency and uniqueness analyses; these JSON profiles are used as prototype manifests for preset matching.
 
 Supported image filename extensions are `.jpg`, `.jpeg`, `.png`, `.tif`, `.tiff`, `.webp`, `.heic`, and `.avif` (case-insensitive). The tool analyzes one image per invocation.
 
@@ -87,7 +89,7 @@ Ingredient-manifest references can be extracted by helper functions, but the cur
 │   ├── preset_match.py        # Wildcard-aware action matching and scoring algorithms
 │   └── compare.py             # Order-independent action list clustering utility
 
-├── database/                  # DB of partial CCs
+├── database/                  # Bundled preset database (select with --database ./database)
 │   ├── Lightroom/             # 118 Lightroom profiles (seasons, styles, adaptive, etc.)
 │   └── Adobe Photoshop/       # 24 Photoshop profiles (cinematic, b&w, landscape, etc.)
 

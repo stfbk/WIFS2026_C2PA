@@ -5,7 +5,7 @@ SINGLE IMAGE: classify it, then call the matching model handler directly
     on that one image. No output folder, no subfolder routing -- there's
     nothing to batch, so go straight to inference.
 
-        ./run.sh ./input/rome.jpg --database ./database
+        ./run.sh ./input/rome.jpg
 """
 
 from __future__ import annotations
@@ -36,7 +36,7 @@ def parse_args() -> argparse.Namespace:
         "--database",
         type=Path,
         default=Path(DEFAULT_DATABASE_DIR),
-        help="Path to the preset database",
+        help="Path to the preset database (default: ./dataset)",
     )
     return parser.parse_args()
 

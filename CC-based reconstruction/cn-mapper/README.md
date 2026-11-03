@@ -1,28 +1,64 @@
-# C2PA preset-matching pipeline (cn-mapper)
+# C2PA Preset-Matching Pipeline
 
-This repository contains the implementation of the cn-mapper described in section III A of our paper *"Enhanced image forensics through partial C2PA-based provenance information"*.
+## Overview
 
-## Example usage
+This repository contains the implementation of the `cn-mapper` tool described in Sect. III-A of the paper *"Enhanced image forensics through partial C2PA-based provenance information"*.
 
-From the repository root, pass an image path:
+> **Enhanced image forensics through partial C2PA-based provenance information**  
+> *Riccardo Ziglio, Eleonora Marchesini, Andrea Montibeller, Giulia Boato, Silvio Ranise, Cecilia Pasquini*  
+> Accepted to IEEE Workshop on Information Forensics and Security 2026
+
+The pipeline analyzes C2PA provenance manifests embedded in images and matches their edit action profiles against a database of known application presets (e.g., Adobe Lightroom and Adobe Photoshop).
+
+---
+
+## Preset-matching pipeline
+
+### Methodology
+
+The pipeline processes target image files through a multi-step workflow:
+
+#### 1. Extraction & Filtering
+
+For each image, its manifest is parsed using `c2patool` (via `helper.manifest.read_manifest_store`) to select the active manifest store and extract the software used (`claim_generator_info[name]`) along with recorded actions from `c2pa.actions` and `c2pa.actions.v2`.
+
+- Actions lacking both a name and parameters are removed, and `c2pa.opened` is excluded.
+- For Adobe Lightroom specifically, preset-label-only entries (e.g., parameter values containing `preset` or `none to`) are dropped.
+- Remaining actions retain their original order and duplicates, passing only action names and key-value parameters to the matcher.
+
+#### 2. Tool Identification & Preset Loading
+
+The software name is normalized (`tool_id.identify_tool`) and checked for support (**Adobe Lightroom** or **Adobe Photoshop**).
+
+- If no evaluable active manifest is present or the tool is unsupported, execution halts early and returns the corresponding result category.
+- For supported tools, `cn_mapper.py` locates the matching subdirectory in `database/` and recursively loads all JSON preset files. A unique preset identifier is derived from its relative path (appended with entry keys if a single JSON file contains multiple presets).
+
+#### 3. Matching & Scoring
+
+Each database preset is scored against the image's extracted actions via `helper.preset_match.score_preset`:
+
+- Action names must match strictly, and every parameter key defined in the preset must exist in the extracted action.
+- Parameter values must match exactly, except where the preset specifies `x_variable`, which acts as a wildcard.
+- Matches are strictly one-to-one; a single extracted action cannot satisfy multiple preset actions.
+
+#### 4. Classification & Output
+
+- **Exact Match (`same`)**: Occurs when all preset actions match with no extra unassigned image actions (e.g., adaptive presets).
+- **Partial Match (`similar`)**: Occurs when at least one preset action matches, but the overall match is non-exact. The top 5 partial candidates are retained, and the highest percentage match is reported.
+
+The CLI outputs a human-readable result. The underlying `ClassificationRecord` captures the category, tool, match counts, match percentage, matching preset names, and partial-match shortlist, while providing JSON serialization methods.
+
+> **Note:** Helper functions can extract ingredient-manifest references, but the current CLI workflow evaluates actions from the active manifest only; it does not recursively analyze ingredient manifests or process batch image folders.
+
+### Usage
+
+Run the pipeline from the repository root by passing an image path:
 
 ```bash
 ./run.sh ./input/rome.jpg --database ./database
 ```
 
 Supported image filename extensions are `.jpg`, `.jpeg`, `.png`, `.tif`, `.tiff`, `.webp`, `.heic`, and `.avif` (case-insensitive). The tool analyzes one image per invocation.
-
-## Processing flow
-
-1. `run.sh` resolves the repository directory, verifies `c2patool --version` succeeds, and runs `python3 -m c2pa_mapper` with the supplied arguments.
-2. `c2pa_mapper.__main__` checks that the preset database path exists and calls `analyse_image`.
-3. `orchestrator.analyse_image` rejects unsupported filename extensions, invokes `c2patool` through `helper.manifest.read_manifest_store`, and selects the active manifest. It reads the claim-generator name and extracts actions from the `c2pa.actions` and `c2pa.actions.v2` assertions.
-4. `helper.manifest_clean.filter_actions` removes actions without a name or parameters and excludes `c2pa.opened`. For Lightroom it also removes actions whose parameter values contain the label terms `preset` or `none to`, which are treated as preset-name-only entries. Remaining actions retain their order and duplicates, with only the action name and parameters passed on.
-5. `tool_id.identify_tool` normalizes the claim-generator name to lowercase and accepts only `lightroom` or `adobe photoshop`. If there is no evaluable active manifest or the tool is unsupported, the CLI reports the corresponding result without attempting preset matching.
-6. `cn_mapper` maps the tool name to its database subdirectory and recursively loads its JSON preset files. A preset identifier is derived from its path relative to the tool directory; if a JSON file contains multiple preset entries, the entry key is appended to the identifier.
-7. `helper.preset_match.score_preset` compares each preset action to the extracted actions. Action names must match, every preset parameter key must be present, and values must match except where the preset value is `x_variable`, which acts as a wildcard. Matching is one-to-one, so a single extracted action cannot satisfy multiple preset actions.
-8. The mapper classifies a preset as an exact match when all of its actions match and there are no extra extracted actions. Otherwise, presets with at least one matched action are partial candidates. The top five partial candidates are retained in the result; the highest percentage is reported as the similar preset.
-9. The CLI prints the resulting human-readable message. The `ClassificationRecord` also carries the category, tool, match counts, percentage, matching preset names, and partial-match shortlist, and provides a JSON conversion method for callers.
 
 ## Result categories
 

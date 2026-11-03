@@ -19,7 +19,7 @@ For a certain preset the possible outcomes could be:
 - *Full Consistency (FC)*: all manifests for that preset have the same full set of action and parameters, the **same full action profile**.
 - *Partial Consistency (PC)*: all manifests have the **same partial action profile**, which is the aciton profile minus the parameters key-value pairs which add preset-specific details.
 
-The code in `./c2pa_consistency` implement this analysis. 
+The code in `./c2pa_consistency` implement this analysis.
 
 ### Methodology
 
@@ -83,6 +83,7 @@ Presets that match no other preset at any level are categorized as **unique**. T
 ### Usage
 
 Execute the uniqueness analysis without additional arguments (it will automatically reads from `./output/consistency/`):
+
 ```bash
 bash run_uniqueness.sh
 ```
@@ -126,21 +127,17 @@ c2pa-compare-lr-presets/
 
 ├─ output/              # Results of the consistency and uniqueness analysis
 │  ├─ consistency/
-├── ├─ Adobe Photoshop/
-├── ├─ Lightroom/
 │  ├─ uniqueness/ 
 
 ├─ clean.sh             # Teardown
-├─ run_consistency.sh   # Setup and run consistency check
-├─ run_uniqueness.sh    # Setup and run uniqueness check
-                   
+├─ run_consistency.sh   # Setup and run consistency analysis
+├─ run_uniqueness.sh    # Setup and run uniqueness analysis
+└─ run.sh               # Setup and run combined consistency and uniqueness analysis                
 ```
 
 ---
 
 ## Requirements
-
-<!-- TODO check requirements -->
 
 ### Python
 

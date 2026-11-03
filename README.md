@@ -1,15 +1,15 @@
-# Enhanced image forensics through partial C2PA-based provenance information
-
 <div align="center">
+
+# Enhanced image forensics through partial C2PA-based provenance information
 
 <!-- badges -->
 [![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](https://arxiv.org/abs/2610.38639)
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white&labelColor=3776AB)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&logoColor=white&labelColor=EE4C2C)](https://pytorch.org/)
-<!-- end badges -->
 
 </div>
+<!-- end badges -->
 
 This the official implementation of our paper:
 
@@ -23,11 +23,11 @@ Available on [arXiv](https://arxiv.org/abs/2610.38639).
 
 ## Hybrid authenticity verification pipeline
 
-This repository implements the two-step detection strategy presented in the paper:
+This repository implements the two-step detection strategy presented in the paper, consisting of two main components:
 
 - **CC-based reconstruction**: Partial CCs of the image under investigation are used for reconstructing the applied command of a certain tool based on an available manifest database (DB) of tools and commands
 
-- **Reconstruction-aware detector adaptation**: Forensic detectors are optimized accordingly through supervised adaptation techniques  (SDA)
+- **Reconstruction-aware detector adaptation**: Forensic detectors are optimized accordingly through supervised adaptation techniques (SDA)
 
 <!-- ![pipeline-image](assets/pipeline.drawio.png) -->
 
@@ -40,26 +40,31 @@ Full resolution pipeline available in [./assets/](./assets/)
 ## Folder Organization
 
 ```bash
-├── asset/                                     # Diagrams, figures, and media assets (e.g., pipeline architecture scheme)
+├── assets/                                    # Pipeline architecture schemes
 ├── CC-based reconstruction/                   # Core provenance reconstruction pipeline
 │   ├── c2pa-preset analysis                   # Tools for parsing, extracting, and analyzing raw C2PA edit actions
 │   └── cn-mapper                              # Matching engine that attributes extracted actions to known preset databases
-├── paper-plots/                               # Scripts and data used to generate figures and performance evaluation plots for the paper
+├── paper_supplementary/                       # Supplementary plots, preset examples, and DB documentation for the paper
 ├── Reconstruction-aware detector adaptation   # Forensic models adapted using the reconstructed post-processing metadata
 └── README.md                                  # Primary repository overview, setup guide, and documentation 
 ```
 
-**Note: Implementation details and requirements are contained in the README.md file within each component's subfolder.**
+**Note: Implementation details and requirements are contained in the README.md file within each pipeline component's subfolder.**
 
 ---
 
 ## Models and Dataset Downloads
 
-TODO: add comment to links and folder organization
+### Pre-trained checkpoints
 
-- **Pre-trained Checkpoints**: Download from [SharePoint Model Weights Link](https://fbk-my.sharepoint.com/my?id=%2Fpersonal%2Frziglio%5Ffbk%5Feu%2FDocuments%2FSharedMaterial%2FReplicationPackages%2FWIFS2026%5FReplicationPackage%2FWIFS2026%5FFTmodels&ga=1&share=cgqiQOCr3hxKSIPfO6eEDcXTEgUCI%2D10cYG3HBP9NMapILfHOw)
+Download the [pre-trained detector checkpoints](https://fbk-my.sharepoint.com/my?id=%2Fpersonal%2Frziglio%5Ffbk%5Feu%2FDocuments%2FSharedMaterial%2FReplicationPackages%2FWIFS2026%5FReplicationPackage%2FWIFS2026%5FFTmodels&ga=1&share=cgqiQOCr3hxKSIPfO6eEDcXTEgUCI%2D10cYG3HBP9NMapILfHOw). The folder contains weights for the adapted CLIP-D, R50-ND, and R50-E2P detectors.
 
-- **Dataset**: Download the experimental dataset from [SharePoint Dataset Link](https://fbk-my.sharepoint.com/my?id=%2Fpersonal%2Frziglio%5Ffbk%5Feu%2FDocuments%2FSharedMaterial%2FReplicationPackages%2FWIFS2026%5FReplicationPackage%2FWIFS2026%5FC2PAdataset&viewid=004d79fb%2D3960%2D4679%2D8671%2Dcba74b2553b9&ga=1&share=cgopuiOTiMY3Q4kiRhrejUUMEgUCj8s4m1gXIjXasHgvJAIAkg)
+### Experimental dataset
+
+Download the [experimental dataset](https://fbk-my.sharepoint.com/my?id=%2Fpersonal%2Frziglio%5Ffbk%5Feu%2FDocuments%2FSharedMaterial%2FReplicationPackages%2FWIFS2026%5FReplicationPackage%2FWIFS2026%5FC2PAdataset&viewid=004d79fb%2D3960%2D4679%2D8671%2Dcba74b2553b9&ga=1&share=cgopuiOTiMY3Q4kiRhrejUUMEgUCj8s4m1gXIjXasHgvJAIAkg). It contains:
+
+- **DB**: The partial-CC database described in the paper, with 118 Adobe Lightroom (LR) presets and 24 Adobe Photoshop (PS) presets.
+- **TF2K_LR**: The experimental dataset used to adapt the detectors, containing 20 Lightroom presets. Both PRE and social splits are included.
 
 ---
 

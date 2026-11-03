@@ -55,7 +55,7 @@ The CLI outputs a human-readable result. The underlying `ClassificationRecord` c
 Run the pipeline from the repository root by passing an image path:
 
 ```bash
-./run.sh ./input/rome.jpg --database ./database
+./run.sh <path_to_image> [--database ./database]
 ```
 
 Supported image filename extensions are `.jpg`, `.jpeg`, `.png`, `.tif`, `.tiff`, `.webp`, `.heic`, and `.avif` (case-insensitive). The tool analyzes one image per invocation.

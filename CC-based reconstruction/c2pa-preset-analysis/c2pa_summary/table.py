@@ -31,7 +31,7 @@ OLD_VARIANTS_DIR = "old_variants"
 HEADERS = ["Folder", "Partial Consistency", "Full Consistency", "Partial Uniqueness", "Full Uniqueness"]
 MARK = "✓"
 
-FAMILY_DEPTH = 3  # path components that define a family, e.g. 2 -> "lr-presets/adaptive"
+FAMILY_DEPTH = 2  # path components that define a family, e.g. 2 -> "lr-presets/adaptive"
 
 HEADER_LINE = "| " + " | ".join(HEADERS) + " |"
 DIVIDER_LINE = "|" + "|".join(["---", ":---:", ":---:", ":---:", ":---:"]) + "|"

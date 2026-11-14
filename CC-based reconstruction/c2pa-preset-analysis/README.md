@@ -93,7 +93,7 @@ The matching signatures preserve action and parameter order except where a class
 
 Examples use the shorthand `A{x:1, y:2}` for an action of type `A` with parameters `x=1` and `y=2`. Each pair illustrates the shared signature that places the profiles in that class:
 
-| Class | Profiles share | Example pair |
+| Class | Profiles share | Example |
 | --- | --- | --- |
 | `fully_identical` | Same action types in the same order, same parameter names in the same order, and same values. | `[A{x:1}]` and `[A{x:1}]` |
 | `differs_at_values` | Same ordered actions and ordered parameter names; values differ. | `[A{x:1}]` and `[A{x:2}]` |

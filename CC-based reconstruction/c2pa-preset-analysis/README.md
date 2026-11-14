@@ -137,86 +137,51 @@ Wrote output/summary_table.csv
 Done.
 ```
 
-<!-- Building upon the consistency analysis, this step investigates whether a preset can be distinguished from all others in the database based solely on its action and parameter combinations. If it does, the preset is defined as **unique**.
-
-While the consistency analysis established that most presets share identical actions and parameter values across images, this step evaluates whether a preset's specific combination of actions and parameters can uniquely identify it among all presets in the database.
-
-The code in `./c2pa_uniqueness` will:
-
-- Start from the results of the consistency analysis step.
-- Iteratively check parameter matches between different preset versions to identify:
-  - Missing or additional actions
-  - Different action types (typically, all presets share the same `c2pa.action`, either one or two depending on the preset class)
-  - Different parameter values for a given action
-  - Full matches between actions and parameters
-- Automatically group presets into the following categories:
-  - `fully_identical`
-  - `differs_at_values`
-  - `differs_at_parameter_order`
-  - `differs_at_parameter_names`
-  - `differs_at_actions_order`
-  - `differs_at_actions_type`
-
-The procedure iterates over all possible groups and retains only those containing two or more presets (a single preset in a category is already considered unique).
-
-Similar to the consistency check, the script prints a summary to the terminal and saves a complete report as a JSON file. A `uniqueness_report` summarizes the results for all consistent presets, while dedicated reports are generated for inconsistent presets (`film_inspired_coolB&W` and `film_inspired_boldB&W`).
-
-description from main:
-Task 1: for each folder flagged inconsistent by c2pa_consistency (has an
-        inconsistency_report.md), report a positional action-slot summary
-        (where in the sequence presets agree/split) plus a local uniqueness
-        grouping among just that folder's own preset variants.
-Task 2: across ALL presets found under output_path, group each preset into
-        its single most-constrained equivalence class (one of 7 categories),
-        or report it as unique if it matches nobody at any level.
-        
- -->
-
 ---
 
 ## Folder Organization
 
 ```bash
 c2pa-presets-analysis/
-├─ c2pa_common/         # Shared constants, descriptions, and default paths
+├─ c2pa_common/             # Shared constants, descriptions, and default paths
 │  ├─ constants.py
 │  ├─ info.py
 │  └─ paths.py
 ├─ c2pa_consistency/    
-│  ├─ __main__.py       # Entrypoint for c2pa_consistency
-│  ├─ actions.py        # Action filtering
-│  ├─ analyzer.py       # Analysis of inconsistent preset folders
-│  ├─ compare.py        # Cluster images within a preset folder by order-independent action equality
-│  ├─ constants.py      # Constants used across the c2pa_consistency module
-│  ├─ info.py           # c2pa_consistency logo and versioning information
-│  ├─ manifest.py       # Read and traverse manifest data structures
-│  ├─ naming.py         # Derive a stable key for a fingerprint from its folder path
-│  ├─ pipeline.py       # Orchestration: one preset folder in, JSON file(s) out
-│  ├─ writer.py         # Write one JSON file per action-list cluster, mirroring the input tree
-├─ c2pa_summary/        # Markdown, CSV, and grouped-JSON summary reports
+│  ├─ __main__.py           # Entrypoint for c2pa_consistency
+│  ├─ actions.py            # Action filtering
+│  ├─ analyzer.py           # Analysis of inconsistent preset folders
+│  ├─ compare.py            # Cluster images within a preset folder by order-independent action equality
+│  ├─ constants.py          # Constants used across the c2pa_consistency module
+│  ├─ info.py               # c2pa_consistency logo and versioning information
+│  ├─ manifest.py           # Read and traverse manifest data structures
+│  ├─ naming.py             # Derive a stable key for a fingerprint from its folder path
+│  ├─ pipeline.py           # Orchestration: one preset folder in, JSON file(s) out
+│  ├─ writer.py             # Write one JSON file per action-list cluster, mirroring the input tree
+├─ c2pa_summary/            # Markdown, CSV, and grouped-JSON summary reports
 │  ├─ __main__.py
 │  └─ table.py
 ├─ c2pa_uniqueness/   
-│  ├─ __main__.py       # Entrypoint for c2pa_uniqueness
-│  ├─ compare.py        # Staged comparison between two presets' action lists, cheapest/coarsest checks first
-│  ├─ constants.py      # Constants used across the c2pa_uniqueness module
-│  ├─ flatten.py        # Shared parameter-flattening logic: generic K / K.value pairing
-│  ├─ grouping.py       # Assign each preset to exactly one group
-│  ├─ info.py           # c2pa_uniqueness logo and versioning information
-│  ├─ loader.py         # Load presets produced by c2pa_consistency for uniqueness analysis
-│  ├─ report.py         # Write grouping and slot-summary results as JSON, print terminal summaries
-│  ├─ slot_summary.py   # Cross-preset action-slot summary for one folder
-├─ DB/                  # Default path to presets   
+│  ├─ __main__.py           # Entrypoint for c2pa_uniqueness
+│  ├─ compare.py            # Staged comparison between two presets' action lists, cheapest/coarsest checks first
+│  ├─ constants.py          # Constants used across the c2pa_uniqueness module
+│  ├─ flatten.py            # Shared parameter-flattening logic: generic K / K.value pairing
+│  ├─ grouping.py           # Assign each preset to exactly one group
+│  ├─ info.py               # c2pa_uniqueness logo and versioning information
+│  ├─ loader.py             # Load presets produced by c2pa_consistency for uniqueness analysis
+│  ├─ report.py             # Write grouping and slot-summary results as JSON, print terminal summaries
+│  ├─ slot_summary.py       # Cross-preset action-slot summary for one folder
+├─ DB/                      # Default path to presets   
 ├─ output/
-│  ├─ consistency/      # Profiles and inconsistency reports
-│  ├─ uniqueness/       # Global and local uniqueness reports
+│  ├─ consistency/          # Profiles and inconsistency reports
+│  ├─ uniqueness/           # Global and local uniqueness reports
 │  ├─ summary_table.md
 │  ├─ summary_table.csv
 │  └─ summary_grouped.json
-├─ run_consistency.sh   # Run consistency analysis
-├─ run_uniqueness.sh    # Run uniqueness analysis
-├─ run.sh               # Run the full analysis by default
-└─ clean.sh             # Remove output folder
+├─ run_consistency.sh       # Run consistency analysis
+├─ run_uniqueness.sh        # Run uniqueness analysis
+├─ run.sh                   # Run the full analysis by default
+└─ clean.sh                 # Remove output folder
 ```
 
 ---

@@ -94,7 +94,7 @@ The matching signatures preserve action and parameter order except where a class
 Examples use the shorthand `A{x:1, y:2}` for an action of type `A` with parameters `x=1` and `y=2`. Each pair illustrates the shared signature that places the profiles in that class:
 
 | Class | Profiles share | Example pair |
-|---|---|---|
+| --- | --- | --- |
 | `fully_identical` | Same action types in the same order, same parameter names in the same order, and same values. | `[A{x:1}]` and `[A{x:1}]` |
 | `differs_at_values` | Same ordered actions and ordered parameter names; values differ. | `[A{x:1}]` and `[A{x:2}]` |
 | `differs_at_parameter_order` | Same ordered actions and same parameter-name set per action, ignoring parameter order; no more-specific match was found. | `[A{x:1, y:2}]` and `[A{y:2, x:1}]` |
@@ -102,7 +102,7 @@ Examples use the shorthand `A{x:1, y:2}` for an action of type `A` with paramete
 | `differs_at_action_order` | Same action types, ignoring action order; no more-specific match was found. | `[A{x:1}, B{y:2}]` and `[B{y:2}, A{x:1}]` |
 | `differs_at_action_types` | Same number of actions, but different action-type sequences; no more-specific match was found. | `[A{x:1}]` and `[B{x:1}]` |
 
-These are equivalence classes of profiles, not a claim that every pair differs only in the named feature. The name describes the loosest signature the group shares after more-specific groups have been assigned. Groups contain two or more profiles. A profile that shares no signature with another profile at any stage, including action count, is categorized as **unique**.
+These are equivalence classes of profiles, not a claim that every pair differs only in the named feature. The name describes the loosest signature the group shares after more-specific groups have been assigned. Groups contain two or more profiles. A profile that shares no signature with another profile at any stage, including action count, is categorized as `**UNIQUE**`.
 
 The global pass includes JSON profile files found recursively in the input tree; this can include `_UNIQUE.json` files and originals in `old_variants/` when those are present.
 

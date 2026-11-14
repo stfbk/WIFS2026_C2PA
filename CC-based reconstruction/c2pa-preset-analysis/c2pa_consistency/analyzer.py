@@ -25,7 +25,8 @@ from __future__ import annotations
 from pathlib import Path
 import textwrap
 
-from .constants import VALUE_SUFFIX, REPORT_FILENAME, ACTION_COL_WIDTH, VALUE_COL_WIDTH, ROW_COLORS, DIM, RESET, BOLD
+from c2pa_common.constants import VALUE_SUFFIX, INCONSISTENCY_REPORT_FILENAME as REPORT_FILENAME
+from .constants import ACTION_COL_WIDTH, VALUE_COL_WIDTH, ROW_COLORS, DIM, RESET, BOLD
 from .pipeline import FolderResult
 
 def _flatten_action(action_name: str, parameters: dict) -> dict[str, object]:
@@ -191,11 +192,11 @@ def analyse_inconsistency(result: FolderResult) -> Path | None:
 
     image_names, rows = build_report_rows(result.action_lists)
     
-    print(f"\n{result.output_dir}")
-    print(format_terminal_table(image_names, rows))
+    # print(f"\n{result.output_dir}")
+    # print(format_terminal_table(image_names, rows))
 
     report_path = result.output_dir / REPORT_FILENAME
     report_path.write_text(format_markdown_table(image_names, rows), encoding="utf-8")
-    print(f"  wrote {report_path}")
+    # print(f"  wrote {report_path}")
 
     return report_path

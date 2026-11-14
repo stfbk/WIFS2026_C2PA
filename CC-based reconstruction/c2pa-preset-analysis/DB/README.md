@@ -1,0 +1,1 @@
+Place the DB `lr-presets` and `ps-presets` subfolders here.

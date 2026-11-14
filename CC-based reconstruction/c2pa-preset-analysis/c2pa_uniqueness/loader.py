@@ -4,8 +4,8 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from .constants import INCONSISTENCY_REPORT_FILENAME as REPORT_FILENAME, NON_PRESET_FILENAMES
-
+from c2pa_common.constants import INCONSISTENCY_REPORT_FILENAME as REPORT_FILENAME
+from .constants import NON_PRESET_FILENAMES
 
 @dataclass(frozen=True)
 class Preset:

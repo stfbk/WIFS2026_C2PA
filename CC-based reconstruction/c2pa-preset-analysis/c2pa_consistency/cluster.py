@@ -1,4 +1,6 @@
 """
+consolidate_styles.py
+
 Walks an output tree produced by the style-generation pipeline. In every
 folder that contains an `inconsistency_report.md`, it collects the style
 JSON variants, groups the ones that share the exact same set of actions/
@@ -10,8 +12,11 @@ parameters, and writes one or more merged "UNIQUE" JSON files:
   - files that don't share the same set of parameters are NOT merged
     together; each distinct set of parameters becomes its own cluster,
     written as style_<key>_UNIQUE.json, style_<key>_UNIQUE_variant2.json, ...
-"""
 
+Intended to be dropped into an existing package as a module, e.g.
+`yourpackage/consolidate.py`, and called with `process_output_tree(root)`
+right after the generation step finishes. Also runnable standalone.
+"""
 from __future__ import annotations
 
 import json
@@ -20,7 +25,8 @@ import shutil
 from pathlib import Path
 from collections import defaultdict
 
-REPORT_FILENAME = "inconsistency_report.md"
+from c2pa_common.constants import INCONSISTENCY_REPORT_FILENAME as REPORT_FILENAME
+
 PLACEHOLDER = "x_variable"
 OLD_FILES_SUBFOLDER = "old_variants"
 

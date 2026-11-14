@@ -12,16 +12,16 @@ Task 2: across ALL presets found under output_path, group each preset into
 import sys
 from pathlib import Path
 
-from .info import __uniqueness_scan_logo__, __description_uniqueness__
-from .constants import DEFAULT_INPUT_FOLDER, DEFAULT_OUTPUT_FOLDER
+from c2pa_common.info import __uniqueness_scan_logo__, __description_uniqueness__
+from c2pa_common.paths import UNIQUENESS_INPUT, UNIQUENESS_OUTPUT
 from .loader import find_inconsistent_folders, load_folder_presets, load_all_presets
 from .grouping import group_presets
 from .slot_summary import summarize_folder_slots, format_slot_summary, slot_summary_to_dict
 from .report import print_summary, write_json_report
 
 if __name__ == "__main__":
-    output_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(DEFAULT_INPUT_FOLDER)
-    report_path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path(DEFAULT_OUTPUT_FOLDER)
+    output_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(UNIQUENESS_INPUT)
+    report_path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path(UNIQUENESS_OUTPUT)
 
     if not output_path.exists():
         sys.exit(f"ERROR: Path not found {output_path}")
@@ -40,17 +40,17 @@ if __name__ == "__main__":
             continue
 
         slots = summarize_folder_slots(presets)
-        print(f"{folder}:")
-        print(format_slot_summary(slots))
+        # print(f"{folder}:")
+        # print(format_slot_summary(slots))
 
         grouping = group_presets(presets)
-        print_summary("  Local uniqueness:", grouping)
+        # print_summary("  Local uniqueness:", grouping)
 
         saving_name = str(folder).replace('/', '_')+'.json'
 
         write_json_report(
             {"action_slot_summary": slot_summary_to_dict(slots), "uniqueness": grouping},
-            Path(DEFAULT_OUTPUT_FOLDER) / saving_name,
+            Path(UNIQUENESS_OUTPUT) / saving_name,
         )
 
     # --- Task 2: global uniqueness across every preset in the tree ---
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     print(f"Loaded {len(all_presets)} preset(s) total.\n")
 
     global_grouping = group_presets(all_presets)
-    print_summary("Global uniqueness:", global_grouping)
+    # print_summary("Global uniqueness:", global_grouping)
 
     report_file = report_path / "uniqueness_report.json"
 

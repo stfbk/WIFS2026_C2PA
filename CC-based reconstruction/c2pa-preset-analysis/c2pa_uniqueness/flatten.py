@@ -1,6 +1,6 @@
 """Shared parameter-flattening logic: generic K / K.value pairing."""
 from __future__ import annotations
-from .constants import VALUE_SUFFIX
+from c2pa_common.constants import VALUE_SUFFIX
 
 
 def flatten_parameters(parameters: dict) -> dict[str, object]:

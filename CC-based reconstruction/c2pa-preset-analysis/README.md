@@ -4,10 +4,29 @@
 
 This repository contains the C2PA-based analysis that led to the definition of: *Full Consistency (FC)*, *Partial Consistency (PC)*, *Full Uniqueness (FU)*, and *Partial Uniqueness (PU)*, as discussed in Sect. IV of our paper *"Enhanced image forensics through partial C2PA-based provenance information"*.
 
-The analysis consists of two main steps:
+The analysis consists of two main stages:
 
 - **Consistency analysis** (`c2pa_consistency`)
 - **Uniqueness analysis** (`c2pa_uniqueness`)
+
+---
+
+## Running the full analysis
+
+Run the complete pipeline with the default paths:
+
+```bash
+bash run.sh [path_to_presets]
+```
+
+By default, `run.sh` scans `./DB`, writes consistency profiles and inconsistency reports to `./output/consistency`, runs global uniqueness analysis, and builds the summary reports. The script checks that `c2patool` is installed before starting. 
+<!-- Its default `choice` is `1` (the full pipeline); set the environment variable to select another mode:
+
+- `choice=1 bash run.sh` — consistency, uniqueness, and summary (default).
+- `choice=2 bash run.sh` — consistency and summary, without uniqueness.
+- `choice=3 bash run.sh` — uniqueness and summary using existing consistency output. -->
+
+The summary outputs default to `./output/summary_table.md`, `./output/summary_grouped.json`, and `./output/summary_table.csv`.
 
 ---
 
@@ -28,10 +47,10 @@ For inconsistent folders, the `inconsistency_report.md` lists action/parameter v
 
 ### Usage
 
-Run the analysis by passing the path to your input presets directory. If omitted, the default defined in `./c2pa_consistency/constants.py` is used:
+Run the analysis by passing the path to your input presets directory and, optionally, the consistency output directory. If omitted, the defaults from `c2pa_common/paths.py` are used:
 
 ```bash
-bash run_consistency.sh <path_to_prests>
+bash run_consistency.sh [path_to_presets] [consistency_output_path]
 ```
 
 ### Output Files
@@ -39,22 +58,10 @@ bash run_consistency.sh <path_to_prests>
 The pipeline writes one JSON file per distinct filtered action profile. Output paths mirror the input folder structure under the generating software's directory (`Lightroom` or `Adobe Photoshop`).
 
 - A folder with one profile is fully consistent and produces one JSON file.
-- A folder with multiple profiles produces a base JSON file and `_variantN.json` files, plus an `inconsistency_report.md` when the inconsistency analysis is run.
-- When you choose to further analyze inconsistencies, the clustering step may also write merged `_UNIQUE.json` files. These are JSON files despite the `_UNIQUE` name; they are not Markdown files and are not the global uniqueness result. The step groups profile files by their ordered sequence of actions and parameter names. Files with different sequences cannot be merged. For each matching group with at least two files, it writes a merged profile: parameter values that agree are retained, while values that differ are replaced with `"x_variable"`. If the profiles split into multiple matching groups (for example, because their partial action/parameter profiles differ), the step can write multiple files: `<preset>_UNIQUE.json`, `<preset>_UNIQUE_variant2.json`, and so on. Groups with only one file do not produce a merged file. Originals that contributed to a merged file are moved into an `old_variants/` subfolder.
+- A folder with multiple profiles produces a base JSON file and `_variantN.json` files, plus an `inconsistency_report.md`.
+- The consistency entry point automatically runs the clustering step for inconsistent folders and may write merged `_UNIQUE.json` files. These are JSON files despite the `_UNIQUE` name; they are not Markdown files and are not the global uniqueness result. The step groups profile files by their ordered sequence of actions and parameter names. Files with different sequences cannot be merged. For each matching group with at least two files, it writes a merged profile: parameter values that agree are retained, while values that differ are replaced with `"x_variable"`. If the profiles split into multiple matching groups (for example, because their partial action/parameter profiles differ), the step can write multiple files: `<preset>_UNIQUE.json`, `<preset>_UNIQUE_variant2.json`, and so on. Groups with only one file do not produce a merged file. Originals that contributed to a merged file are moved into an `old_variants/` subfolder.
 
 Use the inconsistency report together with the merged `_UNIQUE.json` file(s) to review potential partial consistency: check that the shared actions and parameters remain the same and that the replaced values correspond to the expected preset-specific differences. The merged files are comparison aids, not an automatic PC verdict.
-
-<!-- For each image, its manifest is taken (if present), and the claim_generator_info[name] and actions are extracted.
-From the set of actions, ones with "action" and "parameters" are kept, except "c2pa.opened" (if present); for Lightroom specifically, the preset-label-only entry (e.g. c2pa.filtered / "Preset") is also dropped.
-
-The resulting list is compared between images (order-independent on both actions and parameters); if one differs it is taken as a second sample to be compared with the remaining images.
-
-The output is one or more JSON files, at least one per preset, stored in the output folder. The output folder is structured with the name of the software (taken from claim_generator_info[name]) and the same structure as the input folder, with the name of the preset as the last folder.
-
-As discussed in the paper, we observed that only two Lightroom (LR) presets fail *FC* but yield *PC*: `film_inspired_coolB&W` and `film_inspired_boldB&W`.
-Therefore, only for these presets, being characterized by the same reference partial action profile, a specific JSON file will be created for all inconsistent images (called variant in the code); an inconsistency_report will highlight the differences in the action profiles for all analyzed images.
-
-Instead, in case of *FC* for a preset, a JSON file containing the preset name, actions, and parameter names and values is saved in the `./output/consistency/` directory (organized by application, i.e., Lightroom or Adobe Photoshop, and preset name). -->
 
 ---
 
@@ -82,7 +89,20 @@ The global analysis reads JSON profiles recursively from the input tree (by defa
 - `differs_at_action_order`
 - `differs_at_action_types` (same action count, but different action types)
 
-In order, the comparison checks full action/parameter identity, parameter values, parameter ordering, parameter names, action ordering, and finally action types among profiles with the same action count. Unlike the consistency comparison, these uniqueness signatures preserve action and parameter order. `fully_identical` means the ordered action and parameter profiles, including values, match. A `differs_at_...` group identifies the most specific structure shared with another profile despite the named difference. At the final stage, profiles with the same number of actions are grouped even if their action types differ. A profile that shares no signature with another profile at any stage, including action count, is categorized as **unique**. Groups contain two or more profiles; ungrouped profiles are listed under `unique`.
+The matching signatures preserve action and parameter order except where a class explicitly ignores that order. Parameter names use the flattened names described in `c2pa_uniqueness/flatten.py`. Each class below contains profiles that share the listed signature; profiles already assigned to a more-specific class are removed before the next comparison.
+
+Examples use the shorthand `A{x:1, y:2}` for an action of type `A` with parameters `x=1` and `y=2`. Each pair illustrates the shared signature that places the profiles in that class:
+
+| Class | Profiles share | Example pair |
+|---|---|---|
+| `fully_identical` | Same action types in the same order, same parameter names in the same order, and same values. | `[A{x:1}]` and `[A{x:1}]` |
+| `differs_at_values` | Same ordered actions and ordered parameter names; values differ. | `[A{x:1}]` and `[A{x:2}]` |
+| `differs_at_parameter_order` | Same ordered actions and same parameter-name set per action, ignoring parameter order; no more-specific match was found. | `[A{x:1, y:2}]` and `[A{y:2, x:1}]` |
+| `differs_at_parameter_names` | Same action types in the same order, but parameter names or their order differ; no more-specific match was found. | `[A{x:1}]` and `[A{y:1}]` |
+| `differs_at_action_order` | Same action types, ignoring action order; no more-specific match was found. | `[A{x:1}, B{y:2}]` and `[B{y:2}, A{x:1}]` |
+| `differs_at_action_types` | Same number of actions, but different action-type sequences; no more-specific match was found. | `[A{x:1}]` and `[B{x:1}]` |
+
+These are equivalence classes of profiles, not a claim that every pair differs only in the named feature. The name describes the loosest signature the group shares after more-specific groups have been assigned. Groups contain two or more profiles. A profile that shares no signature with another profile at any stage, including action count, is categorized as **unique**.
 
 The global pass includes JSON profile files found recursively in the input tree; this can include `_UNIQUE.json` files and originals in `old_variants/` when those are present.
 
@@ -105,43 +125,16 @@ All files are saved to `./output/uniqueness`.
 #### Example of Terminal Summary
 
 ```bash
-Global uniqueness:
-  fully_identical: 2 group(s), 4 preset(s)
-    Group_1 (2 action(s)): 7 preset(s)
-    Group_2 (1 action(s)): 2 preset(s)
-  differs_at_values: 7 group(s), 14 preset(s)
-    Group_1 (1 action(s)): 12 preset(s)
-    Group_2 (1 action(s)): 12 preset(s)
-    Group_3 (27 action(s)): 5 preset(s)
-    Group_4 (23 action(s)): 3 preset(s)
-    Group_5 (27 action(s)): 11 preset(s)
-    Group_6 (20 action(s)): 11 preset(s)
-    Group_7 (40 action(s)): 2 preset(s)
-  differs_at_parameter_names: 23 group(s), 46 preset(s)
-    Group_1 (24 action(s)): 9 preset(s)
-    Group_2 (25 action(s)): 3 preset(s)
-    Group_3 (30 action(s)): 2 preset(s)
-    Group_4 (27 action(s)): 6 preset(s)
-    Group_5 (39 action(s)): 4 preset(s)
-    Group_6 (28 action(s)): 5 preset(s)
-    Group_7 (29 action(s)): 4 preset(s)
-    Group_8 (22 action(s)): 5 preset(s)
-    Group_9 (35 action(s)): 2 preset(s)
-    Group_10 (34 action(s)): 3 preset(s)
-    Group_11 (41 action(s)): 3 preset(s)
-    Group_12 (33 action(s)): 5 preset(s)
-    Group_13 (40 action(s)): 5 preset(s)
-    Group_14 (43 action(s)): 2 preset(s)
-    Group_15 (36 action(s)): 4 preset(s)
-    Group_16 (19 action(s)): 5 preset(s)
-    Group_17 (38 action(s)): 3 preset(s)
-    Group_18 (12 action(s)): 2 preset(s)
-    Group_19 (18 action(s)): 4 preset(s)
-    Group_20 (32 action(s)): 4 preset(s)
-    Group_21 (14 action(s)): 2 preset(s)
-    Group_22 (23 action(s)): 2 preset(s)
-    Group_23 (16 action(s)): 4 preset(s)
-  unique: 13 preset(s)
+Summary of the C2PA preset scan results for consistency and uniqueness.
+
+Summary table: 146 folder(s)
+  consistency: 144 full, 2 partial
+  uniqueness:  137 full, 9 partial
+Wrote output/summary_table.md
+Wrote output/summary_grouped.json
+Wrote output/summary_table.csv
+
+Done.
 ```
 
 <!-- Building upon the consistency analysis, this step investigates whether a preset can be distinguished from all others in the database based solely on its action and parameter combinations. If it does, the preset is defined as **unique**.
@@ -176,56 +169,19 @@ Task 1: for each folder flagged inconsistent by c2pa_consistency (has an
 Task 2: across ALL presets found under output_path, group each preset into
         its single most-constrained equivalence class (one of 7 categories),
         or report it as unique if it matches nobody at any level.
--------------------
-
-Global uniqueness:
-  fully_identical: 2 group(s), 4 preset(s)
-    Group_1 (2 action(s)): 7 preset(s)
-    Group_2 (1 action(s)): 2 preset(s)
-  differs_at_values: 7 group(s), 14 preset(s)
-    Group_1 (1 action(s)): 12 preset(s)
-    Group_2 (1 action(s)): 12 preset(s)
-    Group_3 (27 action(s)): 5 preset(s)
-    Group_4 (23 action(s)): 3 preset(s)
-    Group_5 (27 action(s)): 11 preset(s)
-    Group_6 (20 action(s)): 11 preset(s)
-    Group_7 (40 action(s)): 2 preset(s)
-  differs_at_parameter_names: 23 group(s), 46 preset(s)
-    Group_1 (24 action(s)): 9 preset(s)
-    Group_2 (25 action(s)): 3 preset(s)
-    Group_3 (30 action(s)): 2 preset(s)
-    Group_4 (27 action(s)): 6 preset(s)
-    Group_5 (39 action(s)): 4 preset(s)
-    Group_6 (28 action(s)): 5 preset(s)
-    Group_7 (29 action(s)): 4 preset(s)
-    Group_8 (22 action(s)): 5 preset(s)
-    Group_9 (35 action(s)): 2 preset(s)
-    Group_10 (34 action(s)): 3 preset(s)
-    Group_11 (41 action(s)): 3 preset(s)
-    Group_12 (33 action(s)): 5 preset(s)
-    Group_13 (40 action(s)): 5 preset(s)
-    Group_14 (43 action(s)): 2 preset(s)
-    Group_15 (36 action(s)): 4 preset(s)
-    Group_16 (19 action(s)): 5 preset(s)
-    Group_17 (38 action(s)): 3 preset(s)
-    Group_18 (12 action(s)): 2 preset(s)
-    Group_19 (18 action(s)): 4 preset(s)
-    Group_20 (32 action(s)): 4 preset(s)
-    Group_21 (14 action(s)): 2 preset(s)
-    Group_22 (23 action(s)): 2 preset(s)
-    Group_23 (16 action(s)): 4 preset(s)
-  unique: 13 preset(s)
-
-Wrote output/uniqueness/uniqueness_report.json
-
---- -->
+        
+ -->
 
 ---
 
 ## Folder Organization
 
 ```bash
-c2pa-compare-lr-presets/
+c2pa-presets-analysis/
+├─ c2pa_common/         # Shared constants, descriptions, and default paths
+│  ├─ constants.py
+│  ├─ info.py
+│  └─ paths.py
 ├─ c2pa_consistency/    
 │  ├─ __main__.py       # Entrypoint for c2pa_consistency
 │  ├─ actions.py        # Action filtering
@@ -237,7 +193,9 @@ c2pa-compare-lr-presets/
 │  ├─ naming.py         # Derive a stable key for a fingerprint from its folder path
 │  ├─ pipeline.py       # Orchestration: one preset folder in, JSON file(s) out
 │  ├─ writer.py         # Write one JSON file per action-list cluster, mirroring the input tree
-
+├─ c2pa_summary/        # Markdown, CSV, and grouped-JSON summary reports
+│  ├─ __main__.py
+│  └─ table.py
 ├─ c2pa_uniqueness/   
 │  ├─ __main__.py       # Entrypoint for c2pa_uniqueness
 │  ├─ compare.py        # Staged comparison between two presets' action lists, cheapest/coarsest checks first
@@ -248,17 +206,17 @@ c2pa-compare-lr-presets/
 │  ├─ loader.py         # Load presets produced by c2pa_consistency for uniqueness analysis
 │  ├─ report.py         # Write grouping and slot-summary results as JSON, print terminal summaries
 │  ├─ slot_summary.py   # Cross-preset action-slot summary for one folder
-
-├─ output/              # Results of the consistency and uniqueness analysis
-│  ├─ consistency/
-├── ├─ Adobe Photoshop/
-├── ├─ Lightroom/
-│  ├─ uniqueness/ 
-
-├─ clean.sh             # Teardown
-├─ run_consistency.sh   # Setup and run consistency check
-├─ run_uniqueness.sh    # Setup and run uniqueness check 
-            
+├─ DB/                  # Default path to presets   
+├─ output/
+│  ├─ consistency/      # Profiles and inconsistency reports
+│  ├─ uniqueness/       # Global and local uniqueness reports
+│  ├─ summary_table.md
+│  ├─ summary_table.csv
+│  └─ summary_grouped.json
+├─ run_consistency.sh   # Run consistency analysis
+├─ run_uniqueness.sh    # Run uniqueness analysis
+├─ run.sh               # Run the full analysis by default
+└─ clean.sh             # Remove output folder
 ```
 
 ---

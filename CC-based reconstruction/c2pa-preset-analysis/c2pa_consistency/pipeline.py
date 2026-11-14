@@ -1,5 +1,6 @@
 """Orchestration: one preset folder in, JSON file(s) out."""
 from __future__ import annotations
+import json
 from pathlib import Path
 from dataclasses import dataclass
 
@@ -8,7 +9,7 @@ from .actions import filter_actions, is_lightroom
 from .compare import cluster_action_lists
 from .writer import write_clusters
 from .constants import IMAGE_EXTENSIONS
-
+from c2pa_common.paths import index_path_for
 
 @dataclass
 class FolderResult:
@@ -59,3 +60,20 @@ def analyse_folder(folder: Path, *, input_root: Path, output_root: Path) -> None
     out_dir = write_clusters(clusters, folder=folder, input_root=input_root, output_root=output_root, software=software)
    
     return FolderResult(folder=folder, output_dir=out_dir, image_count=image_count, preset_count=preset_count, action_lists=action_lists if preset_count > 1 else None)
+
+def write_image_index(results: list[FolderResult], *, input_root: Path, output_root: Path) -> Path:
+    """
+    One entry per preset folder, read later by c2pa_summary: the folder as in the
+    input, where its preset files are in the output, and the preset count found
+    BEFORE cluster.py merges anything.
+    """
+    folders = [{
+        "folder": r.folder.relative_to(input_root).as_posix(),
+        "output_dir": r.output_dir.relative_to(output_root).as_posix(),
+        "preset_count": r.preset_count,
+    } for r in results]
+
+    path = index_path_for(output_root)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({"folders": folders}, indent=2, ensure_ascii=False), encoding="utf-8")
+    return path

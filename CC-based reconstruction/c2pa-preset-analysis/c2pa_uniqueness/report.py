@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-
 def print_summary(title: str, grouping: dict) -> None:
     print(title)
     for category, groups in grouping.items():

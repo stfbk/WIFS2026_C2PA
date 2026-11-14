@@ -5,7 +5,8 @@ when every earlier stage matches do we fall through to comparing exact values (t
 from __future__ import annotations
 from dataclasses import dataclass
 
-from .constants import (STAGE_ACTION_COUNT, STAGE_ACTION_TYPES, STAGE_ACTION_ORDER, STAGE_PARAMETER_NAMES,STAGE_PARAMETER_ORDER, STAGE_VALUES, VALUE_SUFFIX)
+from .constants import (STAGE_ACTION_COUNT, STAGE_ACTION_TYPES, STAGE_ACTION_ORDER, STAGE_PARAMETER_NAMES,STAGE_PARAMETER_ORDER, STAGE_VALUES)
+from c2pa_common.constants import VALUE_SUFFIX
 
 
 @dataclass(frozen=True)

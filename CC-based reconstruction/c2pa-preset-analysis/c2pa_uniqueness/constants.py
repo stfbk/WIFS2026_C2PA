@@ -1,9 +1,6 @@
 """Constants for c2pa_uniqueness."""
 
-DEFAULT_INPUT_FOLDER = "./output/consistency/"
-DEFAULT_OUTPUT_FOLDER = "./output/uniqueness/"
 
-VALUE_SUFFIX = ".value"
 
 # All 7 categories, finest (most constrained) to coarsest. This order
 # drives the peeling algorithm in grouping.py.
@@ -33,6 +30,5 @@ STATUS_LABELS = {
 
 # Filenames written by c2pa_consistency / c2pa_uniqueness that must never
 # be re-read as if they were preset JSON files.
-INCONSISTENCY_REPORT_FILENAME = "inconsistency_report.md"
 LOCAL_UNIQUENESS_FILENAME = "uniqueness_local.json"
 NON_PRESET_FILENAMES = frozenset({LOCAL_UNIQUENESS_FILENAME})

@@ -19,9 +19,11 @@ from pathlib import Path
 
 from c2pa_consistency.cluster import process_output_tree
 
-from .constants import DEFAULT_INPUT_FOLDER, DEFAULT_OUTPUT_FOLDER, BAR_WIDTH
-from .info import __consistency_scan_logo__, __description_consistency__
-from .pipeline import analyse_folder
+from c2pa_common.info import __consistency_scan_logo__, __description_consistency__
+from c2pa_common.paths import INPUT_PRESETS, CONSISTENCY_OUTPUT
+
+from .constants import BAR_WIDTH
+from .pipeline import analyse_folder, write_image_index
 from .analyzer import analyse_inconsistency
 
 
@@ -36,8 +38,8 @@ def _print_progress(current: int, total: int, inconsistent_count: int) -> None:
 
 if __name__ == "__main__":
 
-    input_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(DEFAULT_INPUT_FOLDER)
-    output_path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path(DEFAULT_OUTPUT_FOLDER)
+    input_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(INPUT_PRESETS)
+    output_path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path(CONSISTENCY_OUTPUT)
 
     if not input_path.exists():
         sys.exit(f"ERROR: Path not found {input_path}")
@@ -79,6 +81,9 @@ if __name__ == "__main__":
 
     print("\n")
 
+    index_path = write_image_index(results, input_root=root_folder, output_root=output_path)
+    print(f"Wrote image index {index_path}")
+
     inconsistent = [r for r in results if not r.is_consistent]
     skipped = len(all_folders) - len(results)
 
@@ -88,18 +93,18 @@ if __name__ == "__main__":
         for r in inconsistent:
             print(f"  ! {r.output_dir} — {r.image_count} image(s), {r.preset_count} distinct presets")
 
-        print()
-        answer = input("Do you want to further analyse these inconsistencies? [Y/n] ").strip().lower()
-        if answer in ("", "y", "yes"):
-            print()
-            for r in inconsistent:
-                analyse_inconsistency(r)
+        # print()
+        # answer = input("Do you want to further analyse these inconsistencies? [Y/n] ").strip().lower()
+        # if answer in ("", "y", "yes"):
+            # print()
+        for r in inconsistent:
+            analyse_inconsistency(r)
 
-            print(output_path)
-            result = process_output_tree(output_path, min_cluster_size=2, dry_run="", old_files_subfolder="old_variants" or None)
-            for p in result:
-                print("wrote", p)
-            if not result:
-                print("nothing to write (no matching clusters found)")
+        # print(output_path)
+        result = process_output_tree(output_path, min_cluster_size=2, dry_run="", old_files_subfolder="old_variants" or None)
+        # for p in result:
+        #     print("wrote", p)
+        if not result:
+            print("nothing to write (no matching clusters found)")
 
     print()

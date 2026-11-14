@@ -13,7 +13,6 @@ from .flatten import flatten_parameters
 from .loader import Preset
 from .constants import STATUS_FULL_MATCH, STATUS_LABELS, STATUS_PARTIAL_PRESENCE, STATUS_TYPE_MISMATCH, STATUS_VALUE_MISMATCH
 
-
 @dataclass
 class SlotResult:
     index: int

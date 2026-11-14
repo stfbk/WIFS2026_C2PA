@@ -3,12 +3,18 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-INPUT_PATH_cons="${1:-./input_presets}"
-OUTPUT_PATH_cons="${2:-./output/consistency}"
-INPUT_PATH_uniq="${3:-./output/consistency}"
-OUTPUT_PATH_uniq="${4:-./output/uniqueness}"
-OUTPUT_PATH="${5:-./output/}"
-REPORT_FILE="${6:-./output/summary_table.md}"
+cd "$SCRIPT_DIR"
+
+# Defaults live in c2pa_common/paths.py (the single place to edit them)
+default_path() { python3 -c "from c2pa_common import paths; print(paths.$1)"; }
+
+INPUT_PATH_cons="${1:-$(default_path INPUT_PRESETS)}"
+OUTPUT_PATH_cons="${2:-$(default_path CONSISTENCY_OUTPUT)}"
+INPUT_PATH_uniq="${3:-$(default_path UNIQUENESS_INPUT)}"
+OUTPUT_PATH_uniq="${4:-$(default_path UNIQUENESS_OUTPUT)}"
+OUTPUT_PATH="${5:-$(default_path OUTPUT_ROOT)}"
+REPORT_FILE="${6:-$(default_path SUMMARY_TABLE)}"
+GROUPED_FILE="${7:-$(default_path SUMMARY_GROUPED)}"
 
 echo "Checking for system requirements..."
 if command -v c2patool >/dev/null 2>&1 && c2patool --version >/dev/null 2>&1; then
@@ -19,14 +25,12 @@ else
 fi
 echo ""
 
-echo "Which stage(s) do you want to run?"
-echo "  1) Both (consistency + uniqueness/report)"
-echo "  2) Consistency only"
-echo "  3) Uniqueness/report only"
-read -rp "Choice [1]: " choice
+# echo "Which stage(s) do you want to run?"
+# echo "  1) Both (consistency + uniqueness/report)"
+# echo "  2) Consistency only"
+# echo "  3) Uniqueness/report only"
+# read -rp "Choice [1]: " choice
 choice="${choice:-1}"
-
-cd "$SCRIPT_DIR"
 
 run_consistency() {
     echo ""
@@ -49,6 +53,10 @@ case "$choice" in
     3) run_uniqueness_and_clustering ;;
     *) echo "Invalid choice."; exit 1 ;;
 esac
+
+echo ""
+echo "Building summary table..."
+python3 -m c2pa_summary "$OUTPUT_PATH_cons" "$REPORT_FILE" "$GROUPED_FILE"
 
 echo ""
 echo "Done."

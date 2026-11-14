@@ -5,8 +5,6 @@ constants used across the c2pa-consistency module.
 # main.py
 #--------------------------------------
 
-DEFAULT_INPUT_FOLDER = "./input_presets"
-DEFAULT_OUTPUT_FOLDER = "./output/consistency"
 BAR_WIDTH = 30
 
 #--------------------------------------
@@ -31,10 +29,8 @@ IGNORE_LR_NAMES = {"preset", "none to"}
 # Analyzer.py
 #------------------------------------------
 
-REPORT_FILENAME = "inconsistency_report.md"
 ACTION_COL_WIDTH = 20
 VALUE_COL_WIDTH = 10
-VALUE_SUFFIX = ".value"
 # ANSI colors cycled per distinct value within a row, so cells sharing the
 # same value are visually grouped.
 ROW_COLORS = [

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RESULTS_DIR="results"
+RESULTS_DIR="output"
 
 echo "Cleaning up..."
 

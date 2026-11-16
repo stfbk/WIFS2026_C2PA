@@ -58,7 +58,10 @@ Run the pipeline from the repository root by passing an image path:
 bash run.sh <path_to_image> [--database <path_to_database>]
 ```
 
-The `--database` option is optional and defaults to `./database`. This directory should contain the results of the consistency and uniqueness analyses; these JSON profiles are used as prototype manifests for preset matching.
+The `--database` option is optional and defaults to `./DB`. This directory should contain the results of the consistency and uniqueness analyses; these JSON profiles are used as prototype manifests for preset matching.
+
+<!-- **TODO: add as default path the link to db wit the preste profiles resulting from the consistency analysis**
+Missing demo, connecting all portions of the pipeline -> from a single img in input, to its classification via the cn-mapper and the DB, to the final detector classification. -->
 
 Supported image filename extensions are `.jpg`, `.jpeg`, `.png`, `.tif`, `.tiff`, `.webp`, `.heic`, and `.avif` (case-insensitive). The tool analyzes one image per invocation.
 

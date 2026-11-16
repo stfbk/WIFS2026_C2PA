@@ -20,7 +20,7 @@ from c2pa_mapper.info import __c2pa_mapper_logo__, __description_c2pa__
 from c2pa_mapper.tool_id import identify_tool
 from c2pa_mapper.cn_mapper import cn_mapper
 
-DEFAULT_DATABASE_DIR = "./database"
+DEFAULT_DATABASE_DIR = "./DB"
 DEFAULT_IMAGE_PATH = "./input/X_Fake_StyleGAN3_conf-t-psi-0p5_00482.png"
 
 def parse_args() -> argparse.Namespace:

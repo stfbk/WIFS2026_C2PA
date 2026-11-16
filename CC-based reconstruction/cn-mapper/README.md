@@ -92,7 +92,7 @@ Ingredient-manifest references can be extracted by helper functions, but the cur
 │   ├── preset_match.py        # Wildcard-aware action matching and scoring algorithms
 │   └── compare.py             # Order-independent action list clustering utility
 
-├── database/                  # Bundled preset database (select with --database ./database)
+├── DB/                  # Bundled preset database (select with --database ./database)
 │   ├── Lightroom/             # 118 Lightroom profiles (seasons, styles, adaptive, etc.)
 │   └── Adobe Photoshop/       # 24 Photoshop profiles (cinematic, b&w, landscape, etc.)
 

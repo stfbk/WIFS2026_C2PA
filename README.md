@@ -1,16 +1,17 @@
-<div align="center">
+<!-- <div align="center"> -->
 
 # Enhanced image forensics through partial C2PA-based provenance information
 
 <!-- badges -->
-[![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](https://arxiv.org/abs/2610.38639)
 
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white&labelColor=3776AB)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&logoColor=white&labelColor=EE4C2C)](https://pytorch.org/)
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white&labelColor=3776AB)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&logoColor=white&labelColor=EE4C2C)](https://pytorch.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-2506.16497-b31b1b.svg)](https://arxiv.org/abs/2610.38639)
 
-</div>
+
+<!-- </div> -->
 <!-- end badges -->
 
 This the official implementation of our paper:
